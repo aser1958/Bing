@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,23 +12,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using Bing.Properties;
 using Microsoft.Maps.MapControl.WPF;
+using Microsoft.Maps.MapControl.WPF.Core;
+using BingMapsRESTToolkit.Extensions;
 using BingMapsRESTToolkit;
 
 
 namespace Bing
 {
     /// <summary>
-    /// Interaction logic for GetRout.xaml
+    /// Interaction logic for Window3.xaml
     /// </summary>
-    public partial class GetRout : Window
+    public partial class Window3 : Window
     {
         string myKey = "TEXPwe2x8DSzE9NqNfuA~uaoP2VHHxR9xfkreZG7PQQ~Ahj3wia2jCMUhWg9oifBgAdx_UhYFZ1W15tI9OfqBJ3HbCO7CoKxtgydA_IxSKex";
 
-        public GetRout()
+        public Window3()
         {
             InitializeComponent();
+
 
             var routeRequest = new RouteRequest()
             {
@@ -44,7 +48,7 @@ namespace Bing
             Address = "רחובות שני 21"
         },
         new SimpleWaypoint(){
-            Address = "שומרה"
+            Address = "אשדוד"
         }
     },
                 BingMapsKey = myKey
@@ -62,10 +66,10 @@ namespace Bing
             var response = await routeRequest.Execute();
 
             if (response != null &&
-                    response.ResourceSets != null &&
-                    response.ResourceSets.Length > 0 &&
-                    response.ResourceSets[0].Resources != null &&
-                    response.ResourceSets[0].Resources.Length > 0)
+    response.ResourceSets != null &&
+    response.ResourceSets.Length > 0 &&
+    response.ResourceSets[0].Resources != null &&
+    response.ResourceSets[0].Resources.Length > 0)
             {
 
                 var route = response.ResourceSets[0].Resources[0] as Route;
@@ -84,52 +88,9 @@ namespace Bing
                     StrokeThickness = 5
                 };
 
-                if (mMap.Children.Count > 0)
-                {
-                    mMap.Children.RemoveAt(0);
-                }  
-               
-                
                 mMap.Children.Add(routeLine);
 
-                Microsoft.Maps.MapControl.WPF.Location start = new Microsoft.Maps.MapControl.WPF.Location(locs[0].Latitude,locs[0].Longitude);
-
-                mMap.SetView(start, 12);
-                mMap.Center = start;
-
-                Route aa = response.ResourceSets[0].Resources[0] as Route;
-                txtKm.Text = aa.TravelDistance.ToString();
-
-                txtTime.Text=App.SecondToHMS(aa.TravelDuration);
             }
-        }
-
-        private void BtnCalc_Click(object sender, RoutedEventArgs e)
-        {
-            var routeRequest = new RouteRequest()
-            {
-                RouteOptions = new RouteOptions()
-                {
-                    RouteAttributes = new List<RouteAttributeType>()
-        {
-            RouteAttributeType.RoutePath
-        }
-                },
-                Waypoints = new List<SimpleWaypoint>()
-    {
-        new SimpleWaypoint(){
-            Address = txtMoza.Text
-        },
-        new SimpleWaypoint(){
-            Address =txtYaad.Text
-        }
-    },
-                BingMapsKey = myKey
-            };
-
-
-
-            Sale(routeRequest);
         }
     }
 }

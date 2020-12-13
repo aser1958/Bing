@@ -1,16 +1,14 @@
-﻿<Window x:Class="Bing.Window2"
+﻿<Window x:Class="Bing.Window3"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         xmlns:bing="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:bing="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:local="clr-namespace:Bing"
         mc:Ignorable="d"
         WindowState="Maximized"
-        Title="Window2" Height="450" Width="800">
+        Title="Window3" Height="450" Width="800">
     <Grid>
-        <bing:Map Name="mMap" CredentialsProvider="TEXPwe2x8DSzE9NqNfuA~uaoP2VHHxR9xfkreZG7PQQ~Ahj3wia2jCMUhWg9oifBgAdx_UhYFZ1W15tI9OfqBJ3HbCO7CoKxtgydA_IxSKex">
-            
-        </bing:Map>
+        <bing:Map Name="mMap" CredentialsProvider="TEXPwe2x8DSzE9NqNfuA~uaoP2VHHxR9xfkreZG7PQQ~Ahj3wia2jCMUhWg9oifBgAdx_UhYFZ1W15tI9OfqBJ3HbCO7CoKxtgydA_IxSKex"></bing:Map>
     </Grid>
 </Window>
