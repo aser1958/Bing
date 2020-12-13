@@ -1,0 +1,33 @@
+﻿<Window x:Class="Bing.AddTile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF" 
+
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bing"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="AddTile" Height="450" Width="800">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnAddTileLayer" Click="btnAddTileLayer_Click" 
+                HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0">
+            <TextBlock x:Name="txtButton">Add Tile Layer</TextBlock>
+        </Button>
+        <Button x:Name="btnRemoveTileLayer" Click="btnRemoveTileLayer_Click"
+                HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0">
+            <TextBlock x:Name="txtButton2" >Remove Tile Layer</TextBlock>
+        </Button>
+        <m:Map x:Name="MapTileOverlay" CredentialsProvider="TEXPwe2x8DSzE9NqNfuA~uaoP2VHHxR9xfkreZG7PQQ~Ahj3wia2jCMUhWg9oifBgAdx_UhYFZ1W15tI9OfqBJ3HbCO7CoKxtgydA_IxSKex" Mode="Aerial" Center="31.876640708011877, 34.81796609362201" ZoomLevel="10" 
+               Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="1" />
+    </Grid>
+
+</Window>

@@ -3,10 +3,57 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
         xmlns:local="clr-namespace:Bing"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowState="Maximized"
+        Title="MainWindow" Height="450" Width="1800">
+
+    <!--<Grid>
         
-    </Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Name="but1" Click="But1_Click" Content="But1" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+            <Button Name="but2" Click="But2_Click" Content="But1" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+            <m:Map Name="myMap" Height="800"  Mode="Road" CredentialsProvider="TEXPwe2x8DSzE9NqNfuA~uaoP2VHHxR9xfkreZG7PQQ~Ahj3wia2jCMUhWg9oifBgAdx_UhYFZ1W15tI9OfqBJ3HbCO7CoKxtgydA_IxSKex"></m:Map>
+        </StackPanel>
+        
+    </Grid>-->
+
+    <DockPanel>
+        
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" VerticalAlignment="Top">
+            <Button Name="but1" Click="But1_Click" Content="רמבם" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+            <Button Name="but2" Click="But2_Click" Content="שני" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+            <Button Name="but3" Click="But3_Click" Content="Polygon" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+            <Button Name="but4" Click="But4_Click" Content="PolyLine" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+            <Button Name="addImage" Click="AddImage_Click" Content="AddImage" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+            <Button Name="addVideo" Click="AddVideo_Click" Content="addVideo" Background="Red" Width="100" Height="40" Foreground="Yellow" FontWeight="Bold"></Button>
+
+            <TextBox Name="txtLong"></TextBox>
+            <TextBox Name="txtLat"></TextBox>
+            
+        </StackPanel>
+
+        <m:Map Name="myMap" Mode="Road"  MouseDoubleClick="MyMap_MouseDoubleClick" CredentialsProvider="TEXPwe2x8DSzE9NqNfuA~uaoP2VHHxR9xfkreZG7PQQ~Ahj3wia2jCMUhWg9oifBgAdx_UhYFZ1W15tI9OfqBJ3HbCO7CoKxtgydA_IxSKex" Grid.Column="0" >
+            
+        <!--<m:Pushpin Location="31.876640708011877, 34.81796609362201"></m:Pushpin>-->
+        </m:Map>
+
+    </DockPanel>
+
+    
+
+
 </Window>
